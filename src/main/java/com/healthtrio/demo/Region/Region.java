@@ -1,25 +1,18 @@
-package com.healthtrio.demo;
+package com.healthtrio.demo.Region;
 
 import com.google.gson.annotations.SerializedName;
-import org.apache.catalina.User;
-import org.apache.tomcat.util.buf.StringUtils;
-
 import java.util.List;
 
-public class Region implements Comparable<Region> {
 
-    @Override
-    public int compareTo(Region tmpRegion) {
-        if(region != null && !region.equals("")) {
-            int compare = region.compareTo(tmpRegion.getRegion());
-            if (compare == 0){
+/**
+ * Region data type class to be used for manipulating the list of Regions that is obtained via the service endpoint.
+ * I used Intellij's generate for the getters and setters, so my apologies if the code is not null checked / or there
+ * is lacking error handling.  That is something that would have been implemented much more thoroughly if this were to be a
+ * customer facing web app.
+ *
+ */
 
-            }
-            return compare;
-        }
-
-        return 0;
-    }
+public class Region {
 
     public class RegionArray {
         List<Region> region;
@@ -133,7 +126,11 @@ public class Region implements Comparable<Region> {
     }
 
     public String getRegion() {
-        return region;
+        if(region != null) {
+            return region;
+        } else {
+            return "";
+        }
     }
 
     public void setRegion(String region) {

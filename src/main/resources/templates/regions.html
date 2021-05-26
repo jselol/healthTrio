@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Demo Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </script>
+</head>
+<body>
+<h1>Region Coding Exercise</h1>
+<table class="table table-dark"   >
+    <thead>
+        <tr>
+            <th scope="col" data-field="region">Region</th>
+            <th scope="col">Period</th>
+            <th scope="col">% Support Basic EHR Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="region: ${regions}">
+            <td th:text="${region.region}"/>
+            <td th:text="${region.period}"/>
+            <td th:text="${region.pct_hospitals_basic_ehr_notes}"/>
+        </tr>
+    </tbody>
+
+
+</table>
+</body>
+</html>
